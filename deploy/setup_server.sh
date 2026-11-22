@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export DEBIAN_FRONTEND=noninteractive
 
 REPO_URL="$1"
 DEPLOY_PUBLIC_KEY="$2"
@@ -13,8 +14,8 @@ if [ ! -f /swapfile ]; then
     echo "/swapfile none swap sw 0 0" >> /etc/fstab
 fi
 
-apt-get update
-apt-get install -y docker.io docker-compose-v2 nginx git ufw openssl
+apt-get -o DPkg::Lock::Timeout=300 update
+apt-get -o DPkg::Lock::Timeout=300 install -y docker.io docker-compose-v2 nginx git ufw openssl
 systemctl enable --now docker
 
 if ! id deploy > /dev/null 2>&1; then
