@@ -81,8 +81,8 @@ same as on your computer, and their ports are only reachable from inside the dro
 2. On the droplet, as root:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<user>/<repo>/main/deploy/setup_server.sh -o setup_server.sh
-bash setup_server.sh https://github.com/<user>/<repo>.git "<deploy public key>"
+curl -fsSL https://raw.githubusercontent.com/nikamokia777/personal-finance-explainer/main/deploy/setup_server.sh -o setup_server.sh
+bash setup_server.sh https://github.com/nikamokia777/personal-finance-explainer.git "<deploy public key>"
 ```
 
 3. Put your Gemini key into the server `.env`, then start the app as the `deploy` user:
