@@ -1,0 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE DATABASE finance_test;
+\connect finance_test
+CREATE EXTENSION IF NOT EXISTS vector;
