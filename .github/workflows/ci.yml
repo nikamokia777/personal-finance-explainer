@@ -82,7 +82,8 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key deploy@"$DROPLET_IP" "
             cd finance-explainer &&
-            git pull --ff-only &&
+            git fetch origin main &&
+            git reset --hard origin/main &&
             docker compose up -d --build &&
             docker image prune -f
           "
